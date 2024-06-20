@@ -34,6 +34,9 @@ Ekey(nonce, plaintext) = ciphertext
 
 where `key`, `nonce`, and `ciphertext` are all decryption challenge properties and `E` is the authenticated encryption algorithm.
 
+![image](https://github.com/n4wf3l/hashing_decrypting/assets/101114997/a782843a-916c-467b-ae90-61ec4091d13e)
+![image](https://github.com/n4wf3l/hashing_decrypting/assets/101114997/7b5ef1b8-7741-4723-b35a-807792b4e316)
+
 ### Hash Challenge
 
 I also wrote code to handle the hash challenges. The POST and GET requests on a hash resource return a JSON document such as this one:
@@ -49,3 +52,7 @@ I also wrote code to handle the hash challenges. The POST and GET requests on a 
 The `challengeId` identifies the resource. The `message` is a randomly generated message. `attemptsRemaining` tells how many times you can submit a candidate solution before the challenge is automatically deleted. The payload of the DELETE request for the hash challenge is a JSON document with a `prefix` property such that prepending it to the challenge's message results in a Blake2 hash with the 2 leading bytes equal to 0.
 
 Like the `/decrypt` endpoint, `/hash` base64 encodes binary data it sends and expects binary data it receives to be base64 encoded.
+
+![image](https://github.com/n4wf3l/hashing_decrypting/assets/101114997/3c46ecdc-14a0-433a-a7b3-dd6472721250)
+![image](https://github.com/n4wf3l/hashing_decrypting/assets/101114997/29377e70-26b6-46f5-b531-4af9fd2780ba)
+
